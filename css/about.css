@@ -1,0 +1,114 @@
+/* ==========================================================
+   ABOUT
+   ==========================================================
+*/
+
+.about {
+    background: #fff;
+}
+
+.about__wrapper {
+    display: grid;
+    grid-template-columns: 1.3fr .9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about__content {
+    max-width: 640px;
+}
+
+.about__stats {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.about__stat {
+    flex: 1;
+    min-width: 140px;
+    padding: 1.75rem 1.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.about__stat h3 {
+    font-size: 2.4rem;
+    margin-bottom: .6rem;
+}
+
+.about__stat span {
+    color: var(--color-secondary);
+    display: block;
+    letter-spacing: .02em;
+}
+
+.about__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.about__cards {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.about-card {
+    padding: 2rem;
+    border-radius: 28px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.about-card span {
+    display: block;
+    color: var(--color-accent);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .82rem;
+    margin-bottom: .85rem;
+}
+
+.about-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    color: var(--color-secondary);
+    line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+    .about__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 90px 0;
+    }
+
+    .about__stats {
+        flex-direction: column;
+    }
+
+    .about__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

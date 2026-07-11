@@ -1,0 +1,130 @@
+/* ==========================================================
+   RESET.CSS
+   Portfolio V2 — Modern CSS Reset
+   ========================================================== */
+
+/* Box Sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove Default Margin */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth Scroll */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Images & Media */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Forms */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Buttons */
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Lists */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Tables */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+}
+
+/* Paragraph */
+
+p {
+    overflow-wrap: break-word;
+}
+
+/* Text Selection */
+
+::selection {
+    background: rgba(182, 121, 52, 0.2);
+}
+
+/* Focus */
+
+:focus-visible {
+    outline: 2px solid #B67934;
+    outline-offset: 4px;
+}
+
+/* Remove Animations for Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

@@ -1,0 +1,408 @@
+/* ==========================================================
+   NAVBAR.CSS
+   Premium Floating Navbar V2
+   ========================================================== */
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+    position:fixed;
+    top:20px;
+    left:0;
+    width:100%;
+    z-index:var(--z-navbar);
+    transition:var(--transition-normal);
+}
+
+.navbar.scrolled{
+    top:12px;
+}
+
+/* ===========================
+   Wrapper
+=========================== */
+
+.navbar__wrapper{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    height:78px;
+
+    padding:0 30px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.55);
+
+    border-radius:999px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.08);
+
+    transition:var(--transition-normal);
+
+}
+
+.navbar.scrolled .navbar__wrapper{
+
+    height:68px;
+
+    box-shadow:
+    0 14px 45px rgba(0,0,0,.10);
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.navbar__logo{
+
+    font-family:var(--font-heading);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    color:var(--color-primary);
+
+}
+
+.navbar__logo span{
+
+    color:var(--color-accent);
+
+}
+
+/* ===========================
+   Desktop Menu
+=========================== */
+
+.navbar__menu ul{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+.navbar__menu a{
+
+    position:relative;
+
+    font-size:.96rem;
+
+    font-weight:500;
+
+    color:var(--color-secondary);
+
+    transition:var(--transition-fast);
+
+}
+
+/* Hover */
+
+.navbar__menu a:hover{
+
+    color:var(--color-primary);
+
+}
+
+/* Underline Animation */
+
+.navbar__menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:20px;
+
+    background:var(--color-accent);
+
+    transition:.35s;
+
+}
+
+.navbar__menu a:hover::after,
+
+.navbar__menu a.active::after{
+
+    width:100%;
+
+}
+
+/* Active */
+
+.navbar__menu a.active{
+
+    color:var(--color-primary);
+
+}
+
+/* ===========================
+   CTA Button
+=========================== */
+
+.navbar__button{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   Mobile Toggle
+=========================== */
+
+.navbar__toggle{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:pointer;
+
+}
+
+.navbar__toggle span{
+
+    width:24px;
+
+    height:2px;
+
+    border-radius:20px;
+
+    background:var(--color-primary);
+
+    transition:.35s;
+
+}/* ==========================================================
+   NAVBAR.CSS PART 2
+   Mobile Menu + Responsive
+   ========================================================== */
+
+/* ===========================
+   Mobile Menu
+=========================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(247,244,239,.98);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:32px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:var(--transition-normal);
+
+    z-index:999;
+
+}
+
+.mobile-menu.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.mobile-menu a{
+
+    font-family:var(--font-heading);
+
+    font-size:2.1rem;
+
+    color:var(--color-primary);
+
+    transition:var(--transition-fast);
+
+}
+
+.mobile-menu a:hover{
+
+    color:var(--color-accent);
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Hamburger Animation
+=========================== */
+
+.navbar__toggle.active span:nth-child(1){
+
+    transform:translateY(8px) rotate(45deg);
+
+}
+
+.navbar__toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.navbar__toggle.active span:nth-child(3){
+
+    transform:translateY(-8px) rotate(-45deg);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:992px){
+
+    .navbar__menu{
+
+        display:none;
+
+    }
+
+    .navbar__button{
+
+        display:none;
+
+    }
+
+    .navbar__toggle{
+
+        display:flex;
+
+    }
+
+    .navbar__wrapper{
+
+        height:72px;
+
+        padding:0 22px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .navbar{
+
+        top:12px;
+
+    }
+
+    .navbar__wrapper{
+
+        height:66px;
+
+        border-radius:20px;
+
+        padding:0 18px;
+
+    }
+
+    .navbar__logo{
+
+        font-size:1.8rem;
+
+    }
+
+    .mobile-menu a{
+
+        font-size:1.8rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .navbar{
+
+        top:10px;
+
+    }
+
+    .navbar__wrapper{
+
+        height:62px;
+
+        padding:0 16px;
+
+    }
+
+    .navbar__logo{
+
+        font-size:1.6rem;
+
+    }
+
+    .mobile-menu{
+
+        gap:26px;
+
+    }
+
+    .mobile-menu a{
+
+        font-size:1.6rem;
+
+    }
+
+}
